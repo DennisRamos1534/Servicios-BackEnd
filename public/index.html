@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocketServer</title>
+</head>
+<body>
+    <h1>Acceso denegado</h1>
+
+    <div class="socket">
+        <h2 class="socketh1"></h2>
+        <h3 class="socket3"></h3>
+    </div>
+
+    <br>
+    <br>
+    <form class="form-principal" > <!-- class="form-principal" action="/"-->
+        <div class="form-group text-center pt-3">
+            <h1 class="text-light">INICIAR SESION</h1>
+        </div>
+        <!-- <br> -->
+        <div class="form-group mx-sm-4 mb-4 pt-3">
+            <input type="text" class="form-control usuario" name="usurario" id="usuario" placeholder="Usuario">
+        </div>
+        <div class="form-group mx-sm-4 pb-3">
+            <input type="password" class="form-control password" name="password" id="password" placeholder="Contraseña">
+        </div>
+        <!-- <br> -->
+        <div class="form-group mx-sm-4 pb-2">
+            <input type="submit" class="btn btn-block ingresar" value="INGRESAR">
+        </div>
+    </form>
+
+    <script src="socket.io/socket.io.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/validar-token.js"></script>
+
+</body>
+</html>
