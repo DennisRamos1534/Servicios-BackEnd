@@ -16,6 +16,7 @@ const { crearReporte, allReportes, filtrarReporte } = require('../controllers/re
      check('urlImagen', 'La url obligatoria').not().isEmpty(),
      check('direccion', 'La direccion es obligatoria').not().isEmpty(),
      check('descripcion', 'La descripcion es obligatoria').not().isEmpty(),
+     check('tipoServicio', 'El tipo de servicio es obligatorio').not().isEmpty(),
      validarCampos
  ],crearReporte);
  

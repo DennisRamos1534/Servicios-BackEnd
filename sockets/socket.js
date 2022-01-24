@@ -13,7 +13,7 @@ io.on('connection', client => {
 
     client.on('prueba', (payload) => {
         console.log(payload);
-        io.emit('pruebaservidor', payload);
+        io.emit('prueba', payload);
     });
 
     client.on('web', (payload) => {

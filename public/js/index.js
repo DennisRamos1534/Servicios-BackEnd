@@ -38,13 +38,13 @@ socket.on('disconnect', function() {
 
 
 // socket.emit('mensaje', { nombre: 'Fernando' } );
-const direccion = document.querySelector('.socketh1');
-const descripcion = document.querySelector('.socket3');
+// const direccion = document.querySelector('.socketh1');
+const reporte = document.querySelector('.socket3');
 
-socket.on('pruebaservidor', function( payload ){
-    console.log('Escuhando:', payload );
-    direccion.innerHTML = payload.direccion;
-    descripcion.innerHTML = payload.descripcion;
+socket.on('prueba', function( payload ){
+    console.log('Escuchando:', payload );
+    // direccion.innerHTML = payload.direccion;
+    reporte.innerHTML = `${payload.nombre} || ${payload.numero} || ${payload.direccion} || ${payload.descripcion}`;
 });
 
 

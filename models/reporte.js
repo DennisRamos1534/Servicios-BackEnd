@@ -22,6 +22,10 @@ const ReporteSchema = Schema({
         type: String,
         required: true,
     },
+    tipoServicio: {
+        type: String,
+        required: true,
+    },
 }, {
     timestamps: true
 });
