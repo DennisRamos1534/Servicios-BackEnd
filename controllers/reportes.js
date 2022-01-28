@@ -46,7 +46,7 @@ const filtrarReporte = async (req, res = response) => {
     const {numero} = req.body;
 
     try {
-        const reporte = await Reporte.find({numero});
+        const reporte = await Reporte.find({numero, eliminado: false});
         reporte.reverse();
 
         res.json({
@@ -62,8 +62,33 @@ const filtrarReporte = async (req, res = response) => {
     }
 }
 
+const deleteReporte = async (req, res = response) => {
+    
+    const {id} = req.params;
+
+    const reporte = await Reporte.findByIdAndUpdate(id, {eliminado: true});
+
+    res.json({reporte});
+    // try {
+    //     const reporte = await Reporte.find({numero, eliminado: false});
+    //     reporte.reverse();
+
+    //     res.json({
+    //         ok: true,
+    //         reporte
+    //     });
+    // } catch (error) {
+    //     console.log(error);
+    //     res.status(500).json({
+    //         ok: false,
+    //         msg: 'Hable con el administrador'
+    //     });
+    // }
+}
+
 module.exports = {
     crearReporte,
     allReportes,
-    filtrarReporte
+    filtrarReporte,
+    deleteReporte
 }

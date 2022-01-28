@@ -26,6 +26,10 @@ const ReporteSchema = Schema({
         type: String,
         required: true,
     },
+    eliminado: {
+        type: Boolean,
+        required: true,
+    },
 }, {
     timestamps: true
 });

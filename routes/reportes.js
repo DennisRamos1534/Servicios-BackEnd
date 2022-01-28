@@ -4,7 +4,7 @@
 
  const {Router} = require('express');
  const { check } = require('express-validator');
-const { crearReporte, allReportes, filtrarReporte } = require('../controllers/reportes');
+const { crearReporte, allReportes, filtrarReporte, deleteReporte } = require('../controllers/reportes');
  const { validarCampos } = require('../middlewares/validar-campos');
  
  const router = Router();
@@ -17,15 +17,21 @@ const { crearReporte, allReportes, filtrarReporte } = require('../controllers/re
      check('direccion', 'La direccion es obligatoria').not().isEmpty(),
      check('descripcion', 'La descripcion es obligatoria').not().isEmpty(),
      check('tipoServicio', 'El tipo de servicio es obligatorio').not().isEmpty(),
+     check('eliminado', 'El campo eliminado es obligatorio').not().isEmpty(),
      validarCampos
  ],crearReporte);
  
  router.get('/', allReportes);
  
- router.get('/filtrado', [
+ router.post('/filtrado', [
     check('numero', 'El numero es obligatorio y tiene que ser 10 digitos').not().isEmpty().isLength({min: 9, max: 11}),
     validarCampos
  ], filtrarReporte);
+
+ router.delete('/:id', [
+    check('id', 'No es un ID valido').isMongoId(),
+    validarCampos
+ ], deleteReporte);
  
  
  module.exports = router;
