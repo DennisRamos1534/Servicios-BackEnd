@@ -30,6 +30,10 @@ const ReporteSchema = Schema({
         type: Boolean,
         required: true,
     },
+    estado: {
+        type: Boolean,
+        required: true,
+    },
 }, {
     timestamps: true
 });

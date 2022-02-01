@@ -65,30 +65,26 @@ const filtrarReporte = async (req, res = response) => {
 const deleteReporte = async (req, res = response) => {
     
     const {id} = req.params;
-
     const reporte = await Reporte.findByIdAndUpdate(id, {eliminado: true});
-
     res.json({reporte});
-    // try {
-    //     const reporte = await Reporte.find({numero, eliminado: false});
-    //     reporte.reverse();
+    
+}
 
-    //     res.json({
-    //         ok: true,
-    //         reporte
-    //     });
-    // } catch (error) {
-    //     console.log(error);
-    //     res.status(500).json({
-    //         ok: false,
-    //         msg: 'Hable con el administrador'
-    //     });
-    // }
+const actualizarEstado = async (req, res = response) => {
+    
+    const {id} = req.params;
+    const reporte = await Reporte.findByIdAndUpdate(id, {estado: true});
+    res.json({
+        ok: true,
+        reporte
+    });
+    
 }
 
 module.exports = {
     crearReporte,
     allReportes,
     filtrarReporte,
-    deleteReporte
+    deleteReporte,
+    actualizarEstado
 }
