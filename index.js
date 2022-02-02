@@ -27,9 +27,9 @@ app.use( express.static( publicPath ) );
 app.use( express.static( publicPathLogin ));
 
 // Mis rutas
-app.use('/api/login', require('./routes/auth'));
-app.use('/api/reporte', require('./routes/reportes'));
-app.use('/api/actualizar', require('./routes/actualizar'));
+app.use('api/login', require('./routes/auth'));
+app.use('api/reporte', require('./routes/reportes'));
+app.use('api/actualizar', require('./routes/actualizar'));
 
 server.listen( process.env.PORT, ( err ) => {
 
