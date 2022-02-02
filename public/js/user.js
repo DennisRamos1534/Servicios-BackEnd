@@ -51,7 +51,7 @@ const consultarApi = async (usuario, password) => {
         "password": password
     }
    
-    const url = 'http://localhost:3000/api/login/admin';
+    const url = 'https://servicios-pruebas.herokuapp.com/api/login/admin';
 
     try {
         const resp = await fetch(url, {

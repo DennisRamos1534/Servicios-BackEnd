@@ -2,7 +2,7 @@ var tbody = document.querySelector('.tbody');
 
 document.addEventListener('DOMContentLoaded', async () => {
 
-    const url = 'http://localhost:3000/api/login/adminrenovar';
+    const url = 'https://servicios-pruebas.herokuapp.com/api/login/adminrenovar';
     const token = localStorage.getItem('x-token');
 
     try {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         } else {
             localStorage.setItem('x-token', resultado['token']);
             // hacer el llamado al backend
-            const urlReporte = 'http://localhost:3000/api/reporte';
+            const urlReporte = 'https://servicios-pruebas.herokuapp.com/api/reporte';
 
             try {
                 const respReporte = await fetch(urlReporte, { 
@@ -102,7 +102,7 @@ async function reporteCompletado(e) {
     e.preventDefault();
     if(e.target.classList.contains('seleccionar')) {
         const id = e.target.getAttribute('data-id');
-        const urlActualizar = `http://localhost:3000/api/reporte/${id}`;
+        const urlActualizar = `https://servicios-pruebas.herokuapp.com/api/reporte/${id}`;
 
         try {
             const respActualizar = await fetch(urlActualizar, { 
